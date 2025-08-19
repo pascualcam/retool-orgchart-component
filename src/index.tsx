@@ -39,7 +39,17 @@ export const OrgChart: FC = () => {
 
   const [nodeColor, setNodeColor] = Retool.useStateString({
     name: 'nodeColor',
-    initialValue: '#6c757d'
+    initialValue: '#495057'
+  })
+
+  const [leafNodeColor, setLeafNodeColor] = Retool.useStateString({
+    name: 'leafNodeColor',
+    initialValue: '#ffffff'
+  })
+
+  const [nodeBorderColor, setNodeBorderColor] = Retool.useStateString({
+    name: 'nodeBorderColor',
+    initialValue: '#000000'
   })
 
 
@@ -122,15 +132,17 @@ export const OrgChart: FC = () => {
   const separation = { siblings: 2, nonSiblings: 2.5 }
 
   const renderCustomNode = ({ nodeDatum, toggleNode }: any) => {
-    const nodeFillColor = nodeColor
+    // Determine if this is a leaf node (no children)
+    const isLeafNode = !nodeDatum.children || nodeDatum.children.length === 0
+    const nodeFillColor = isLeafNode ? leafNodeColor : nodeColor
 
     return (
       <g>
         <circle
           r={20}
           fill={nodeFillColor}
-          stroke={nodeFillColor}
-          strokeWidth={1}
+          stroke={nodeBorderColor}
+          strokeWidth={2}
           onClick={toggleNode}
           style={{ cursor: 'pointer' }}
         />
@@ -238,12 +250,12 @@ export const OrgChart: FC = () => {
           /* Force consistent node styling */
           .rd3t-node {
             fill: ${nodeColor} !important;
-            stroke: ${nodeColor} !important;
+            stroke: ${nodeBorderColor} !important;
           }
           
           .rd3t-leaf-node {
-            fill: ${nodeColor} !important;
-            stroke: ${nodeColor} !important;
+            fill: ${leafNodeColor} !important;
+            stroke: ${nodeBorderColor} !important;
           }
           
           /* Force consistent text styling */

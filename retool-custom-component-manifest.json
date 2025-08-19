@@ -16,7 +16,17 @@
         },
         {
           "name": "nodeColor",
-          "initialValue": "#6c757d",
+          "initialValue": "#495057",
+          "type": "string"
+        },
+        {
+          "name": "leafNodeColor",
+          "initialValue": "#ffffff",
+          "type": "string"
+        },
+        {
+          "name": "nodeBorderColor",
+          "initialValue": "#000000",
           "type": "string"
         },
         {

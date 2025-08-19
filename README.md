@@ -39,7 +39,9 @@ npx retool-ccl deploy
 |----------|------|---------|-------------|
 | `employeeData` | String (JSON) | Sample employees | JSON string containing flat array of employees |
 | `orientation` | String | "vertical" | Tree orientation: "vertical" or "horizontal" |
-| `nodeColor` | String | "#6c757d" | Color of all employee nodes (default: grey) |
+| `nodeColor` | String | "#495057" | Background color of internal nodes (default: dark grey) |
+| `leafNodeColor` | String | "#ffffff" | Background color of leaf nodes (default: white) |
+| `nodeBorderColor` | String | "#000000" | Border color of all nodes (default: black) |
 | `linkColor` | String | "#999" | Color of the connecting lines |
 | `backgroundColor` | String | "#ffffff" | Background color of the component |
 | `width` | Number | 800 | Width of the chart area in pixels |
@@ -126,17 +128,18 @@ The component expects a **JSON string** with an array of employee objects. Each 
 - Job title (if provided)
 
 ### Colors
-- `nodeColor`: Regular employee node color
-- `managerNodeColor`: Manager node color
-- `linkColor`: Connecting line color
-- `backgroundColor`: Component background
+- `nodeColor`: internal node background color (dark grey by default)
+- `leafNodeColor`: leaf node background color (white by default)
+- `nodeBorderColor`: border color for all nodes (black by default)
+- `linkColor`: connecting line color
+- `backgroundColor`: component background
 
 ### Layout
-- `orientation`: Vertical (top-down) or horizontal (left-right)
-- `width` and `height`: Chart dimensions
+- `orientation`: vertical or horizontal
+- `width` and `height`: chart dimensions
 
 ## Dependencies
-- `react-d3-tree`: Core tree visualization library
-- `@tryretool/custom-component-support`: Retool integration utilities
+- `react-d3-tree`: tree visualization library
+- `@tryretool/custom-component-support`: Retool integration
 - `react`
 - `@types/d3`: TypeScript definitions for D3
