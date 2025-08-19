@@ -1,4 +1,4 @@
-# 🏢 Retool Org Chart Component
+# Retool org chart component
 Org chart component for Retool built with `react-d3-tree`. This component automatically builds hierarchical organizational structures from flat employee data using `employee_id` <> `manager_id` relationships.
 
 ## Features
@@ -45,7 +45,7 @@ npx retool-ccl deploy
 | `width` | Number | 800 | Width of the chart area in pixels |
 | `height` | Number | 600 | Height of the chart area in pixels |
 
-### Employee Data Structure
+### Employee data structure
 
 The component expects a **JSON string** with an array of employee objects. Each employee must have these fields:
 
@@ -74,7 +74,7 @@ The component expects a **JSON string** with an array of employee objects. Each 
 ]
 ```
 
-### Required Fields
+### Required fields
 
 - **`employee_id`** (required): Unique identifier for the employee
 - **`first_name`** (required): Employee's first name
@@ -83,12 +83,12 @@ The component expects a **JSON string** with an array of employee objects. Each 
 - **`start_date`** (required): Employee's start date (ISO date string)
 - **`manager_id`** (optional): ID of the employee's manager (null for root/CEO)
 
-### Optional Fields
+### Optional fields
 
 - **`title`**: Job title or role description
 - **`department`**: Department or team name
 
-### How It Works
+### How it works
 
 1. **Flat Data Input**: You provide a flat array of employees
 2. **Automatic Hierarchy**: The component finds the root employee (no `manager_id`)
@@ -97,7 +97,7 @@ The component expects a **JSON string** with an array of employee objects. Each 
 
 ## Examples
 
-### Basic Employee List
+### Basic employee list
 
 ```json
 [
@@ -107,7 +107,7 @@ The component expects a **JSON string** with an array of employee objects. Each 
 ]
 ```
 
-### Company Structure
+### Company structure
 
 ```json
 [
@@ -121,7 +121,7 @@ The component expects a **JSON string** with an array of employee objects. Each 
 
 ## Customization
 
-### Information Displayed
+### Information displayed
 - Employee full name
 - Job title (if provided)
 
