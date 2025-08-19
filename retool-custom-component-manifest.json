@@ -1,0 +1,48 @@
+{
+  "customComponentSupportVersion": "2",
+  "components": {
+    "OrgChart": {
+      "name": "Org Chart",
+      "model": [
+        {
+          "name": "employeeData",
+          "initialValue": "[]",
+          "type": "string"
+        },
+        {
+          "name": "orientation",
+          "initialValue": "vertical",
+          "type": "string"
+        },
+        {
+          "name": "nodeColor",
+          "initialValue": "#6c757d",
+          "type": "string"
+        },
+        {
+          "name": "linkColor",
+          "initialValue": "#999",
+          "type": "string"
+        },
+        {
+          "name": "backgroundColor",
+          "initialValue": "#ffffff",
+          "type": "string"
+        },
+        {
+          "name": "width",
+          "initialValue": 800,
+          "type": "number"
+        },
+        {
+          "name": "height",
+          "initialValue": 600,
+          "type": "number"
+        }
+      ],
+      "events": [],
+      "defaultHeight": 5,
+      "defaultWidth": 2
+    }
+  }
+}

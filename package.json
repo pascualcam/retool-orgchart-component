@@ -1,10 +1,12 @@
 {
-  "name": "my-react-app",
+  "name": "retool-orgchart-component",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@tryretool/custom-component-support": "latest",
+    "@types/d3": "^7.4.3",
     "react": "^18.2.0",
+    "react-d3-tree": "^3.6.6",
     "react-dom": "^18.2.0"
   },
   "engines": {
@@ -32,7 +34,14 @@
     "@typescript-eslint/parser": "^7.3.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
-    "prettier": "^3.0.3",
-    "postcss-modules": "^6.0.0"
+    "postcss-modules": "^6.0.0",
+    "prettier": "^3.0.3"
+  },
+  "retoolCustomComponentLibraryConfig": {
+    "name": "OrgChart",
+    "label": "Org Chart",
+    "description": "A hierarchical organizational chart component built with react-d3-tree for Retool",
+    "entryPoint": "src/index.tsx",
+    "outputPath": "dist"
   }
 }
