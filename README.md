@@ -1,6 +1,8 @@
 # Retool org chart component
 Org chart component for Retool built with `react-d3-tree`. This component automatically builds hierarchical organizational structures from flat employee data using `employee_id` <> `manager_id` relationships.
 
+![Org Chart Example](blue-ex.png)
+
 ## Features
 
 - Automatically constructs org charts from flat employee data
@@ -136,6 +138,8 @@ The component expects a **JSON string** with an array of employee objects. Each 
 
 ### Layout
 - `orientation`: vertical or horizontal
+  - **Vertical**: Text appears to the right of nodes
+  - **Horizontal**: Text appears above nodes
 - `width` and `height`: chart dimensions
 
 ## Dependencies

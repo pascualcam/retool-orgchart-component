@@ -147,9 +147,9 @@ export const OrgChart: FC = () => {
           style={{ cursor: 'pointer' }}
         />
         <text
-          x={30}
-          y={0}
-          textAnchor="start"
+          x={orientation === 'horizontal' ? 0 : 30}
+          y={orientation === 'horizontal' ? -45 : 0}
+          textAnchor={orientation === 'horizontal' ? 'middle' : 'start'}
           fontSize="12"
           fontWeight="bold"
           fill="#000000"
@@ -168,9 +168,9 @@ export const OrgChart: FC = () => {
         </text>
         {nodeDatum.title && (
           <text
-            x={30}
-            y={15}
-            textAnchor="start"
+            x={orientation === 'horizontal' ? 0 : 30}
+            y={orientation === 'horizontal' ? -30 : 15}
+            textAnchor={orientation === 'horizontal' ? 'middle' : 'start'}
             fontSize="10"
             fill="#000000"
             dominantBaseline="middle"
@@ -237,14 +237,24 @@ export const OrgChart: FC = () => {
     }}>
       <style>
         {`
+          /* Link styling - target react-d3-tree's path elements */
           .link {
-            stroke: ${linkColor};
-            stroke-width: 2;
-            fill: none;
+            stroke: ${linkColor} !important;
+            stroke-width: 2 !important;
+            fill: none !important;
           }
-          .link:hover {
-            stroke-width: 3;
-            stroke: ${nodeColor};
+          
+          /* Target the actual SVG paths that react-d3-tree creates */
+          .rd3t-link {
+            stroke: ${linkColor} !important;
+            stroke-width: 2 !important;
+            fill: none !important;
+          }
+          
+          /* Hover effects */
+          .link:hover, .rd3t-link:hover {
+            stroke-width: 3 !important;
+            stroke: ${nodeColor} !important;
           }
           
           /* Force consistent node styling */
