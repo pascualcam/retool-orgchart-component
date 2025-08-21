@@ -97,11 +97,8 @@ export const OrgChart: FC = () => {
     // root employee (no manager_id)
     const rootEmployee = employees.find(emp => !emp.manager_id)
     if (!rootEmployee) {
-      console.log('No root employee found (no employee with manager_id: null)')
       return null
     }
-
-    console.log('Root employee found:', rootEmployee)
 
     // recursively build the tree
     const buildTree = (employee: Employee): TreeNode => {
@@ -109,7 +106,6 @@ export const OrgChart: FC = () => {
         .filter(emp => emp.manager_id === employee.employee_id)
         .map(buildTree)
 
-      console.log(`Building tree for ${employee.first_name} ${employee.last_name}, children:`, children.length)
 
       return {
         name: `${employee.first_name} ${employee.last_name}`,
@@ -124,7 +120,6 @@ export const OrgChart: FC = () => {
     }
 
     const result = buildTree(rootEmployee)
-    console.log('Final tree structure:', result)
     return result
   }, [employees])
 
